@@ -1,7 +1,7 @@
 # cloud-computing
 
 1. https://b1-class.signin.aws.amazon.com/console
-- b1studentX/b1class123 (X:1~13)
+- b1student12/b1class123 (X:1~13)
 
 2. https://b2-class.signin.aws.amazon.com/console
 - b2studentX/b2class123 (X:1~13)
