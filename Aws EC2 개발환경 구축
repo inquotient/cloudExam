@@ -17,6 +17,11 @@ https://tecadmin.net/install-latest-nodejs-amazon-linux/
    - npm start
    - /work/hellheroku/views/index.ejs -> 인덱스 페이지
 10. aws cli windows, aws eb cli windows 윈도우에 설치
+   - pip install awsebcli --upgrade --user
    - aws / aws-elastic-beanstalk-cli-setup (깃허브 repo)
    - https://docs.aws.amazon.com/ko_kr/elasticbeanstalk/latest/dg/eb-cli3-install-windows.html (aws eb cli 설치가이드)
-11. 
+※ online aws diagram tool (aws 아키텍처 구성도 제작툴)
+※ openstack
+※ a동적 수평 확장 scale out 동적 수직 확장 scale up 295p
+
+
