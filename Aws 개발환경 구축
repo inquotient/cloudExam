@@ -1,0 +1,7 @@
+1. aws ec2 인스턴스 생성
+2. ssh 접속
+3. 기본 의존성 파일sudo yum update
+4. sudo yum install git gcc-c++ make
+5. curl -sL https://npm.nodesource.com/setup_12.x | sudo -E bash -
+6. sudo yum install -y nodejs
+7. sudo npm install -g express-generator
