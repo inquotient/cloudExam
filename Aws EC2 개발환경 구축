@@ -15,5 +15,8 @@ https://tecadmin.net/install-latest-nodejs-amazon-linux/
 8. git clone https://github.com/inquotient/hellheroku.git
 9. node 서버 실행
    - npm start
-   
-/work/hellheroku/views/index.ejs -> 인덱스 페이지
+   - /work/hellheroku/views/index.ejs -> 인덱스 페이지
+10. aws cli windows, aws eb cli windows 윈도우에 설치
+   - aws / aws-elastic-beanstalk-cli-setup (깃허브 repo)
+   - https://docs.aws.amazon.com/ko_kr/elasticbeanstalk/latest/dg/eb-cli3-install-windows.html (aws eb cli 설치가이드)
+11. 
