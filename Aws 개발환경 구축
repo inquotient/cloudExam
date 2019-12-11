@@ -1,7 +1,16 @@
 1. aws ec2 인스턴스 생성
 2. ssh 접속
-3. 기본 의존성 파일sudo yum update
-4. sudo yum install git gcc-c++ make
-5. curl -sL https://npm.nodesource.com/setup_12.x | sudo -E bash -
-6. sudo yum install -y nodejs
-7. sudo npm install -g express-generator
+3. 기본 의존성 파일설치
+   - sudo yum update
+4. gcc-c++, make, git 설치
+   - sudo yum install git gcc-c++ make
+5. sudo curl -sL https://npm.nodesource.com/setup_13.x | sudo -E bash -
+6. nodejs 설치
+   - sudo yum install -y nodejs
+7. express-generator 설치
+   - sudo npm install -g express-generator
+8. git clone https://github.com/inquotient/hellheroku.git
+9. node 서버 실행
+   - npm start
+   
+/work/hellheroku/views/index.ejs -> 인덱스 페이지
