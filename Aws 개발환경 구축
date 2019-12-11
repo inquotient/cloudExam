@@ -7,7 +7,7 @@
 https://tecadmin.net/install-latest-nodejs-amazon-linux/
 4. gcc-c++, make, git 설치
    - sudo yum install git gcc-c++ make
-5. sudo curl -sL https://npm.nodesource.com/setup_13.x | sudo -E bash -
+5. curl -sL https://rpm.nodesource.com/setup_13.x | sudo -E bash -
 6. nodejs 설치
    - sudo yum install -y nodejs
 7. express-generator 설치
