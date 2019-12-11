@@ -14,3 +14,13 @@
   - Vagrant 플러그인
   - docker 플러그인
   - javascript 플러그인
+
+4. yum update
+
+5. express --es
+
+free -h
+- 메모리 용량 정보
+
+df -h
+- 디스크 용량 정보
