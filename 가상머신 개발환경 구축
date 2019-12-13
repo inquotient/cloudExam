@@ -13,6 +13,6 @@
        config.vm.network "public_network", ip: "192.168.56.101"
        config.vm.network "forwarded_port", guest: 3306, host: 13306
        config.vm.provision "shell", path: "bash_ssh_conf.sh"
-6. vagrant up 명령 실행
-7. vagrant 플러그인 vagrant-vbguest 설치
+6. vagrant 플러그인 vagrant-vbguest 설치
    - vagrant plugin install  vagrant-vbguest
+7. vagrant up 명령 실행
