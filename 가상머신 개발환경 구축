@@ -1,0 +1,18 @@
+1. Virtual Box 혹은 Vmware player 설치
+2. Vagrant 설치
+3. cmd에 vagrant init
+4. 명령어 실행경로에 존재하는 Vagrantfile에서 config.vm.box 옵션에 centos/7으로 변경
+5. Vagrantfile에 다음 내용 추가
+    config.vm.provider "virtualbox" do |vb|
+    	vb.name="Node01"
+    	vb.customize ["modifyvm", :id, "--cpus", 1]
+    	vb.customize ["modifyvm", :id, "--memory", 2048]
+       end
+       
+       config.vm.host_name = "node01"
+       config.vm.network "public_network", ip: "192.168.56.101"
+       config.vm.network "forwarded_port", guest: 3306, host: 13306
+       config.vm.provision "shell", path: "bash_ssh_conf.sh"
+6. vagrant up 명령 실행
+7. vagrant 플러그인 vagrant-vbguest 설치
+   - vagrant plugin install  vagrant-vbguest
