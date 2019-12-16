@@ -21,6 +21,10 @@
 
 8. ==> node01: Rsyncing folder: /cygdrive/c/Users/HPE/ => /vagrant
    interrupt 걸기
+   
+9. MySQL 저장소 설정
+   - sudo yum -y intsall https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
+   - sudo yum -y install mysql-community-server
 
 ※ vagrant 제거 명령
    -vagrant destory
