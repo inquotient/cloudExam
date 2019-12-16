@@ -38,7 +38,7 @@
    - cat /var/log/mysqld.log | grep password 실행시 해시값 복사
    
 14. MySQL Login
-   - mysql -uroot -p
+   - mysql -uroot -p -h<hostname> --port<portnumber>
    
 15. 유효한 패스워드 정책 확인
    - show variables like 'validate_password%';
@@ -49,8 +49,69 @@
 17. mysql의 root 계정의 비밀번호를 qwer1234로 변경
    - alter user 'root'@'localhost' identified by 'qwer1234';
    
+---------------------------------------------------------------------
+
+NODE01 MASTER DB
+- IP : 192.168.10.11:3306
+- DB : cloud_db
+- USER :  user1:host1234
+            replicate_user:host1234
+
+
+NODE02 SLAVE DB
+- IP : 192.168.10.12:3306
+- DB : cloud_db
+- USER :  user1:host1234
+
+WINDOWS SLAVE DB
+- IP : 59.29.224.79:3306
+- DB : cloud_db
+- USER :  user1:host1234
+
+
+----------------------------------------------------------------------
+
+위의 세팅대로 가상 호스트를 생성
+
+1. VagrantFile에서 Node01의 설정을 복사하여 위의 IP 설정대로 Node02 호스트 설정
+
+2. forwarded_port를 port 3306을 다른 13306으로 설정 (Node02을 설정)
+
+3. vagrant up
+
+4. 생성한 두 호스트에 cloud_db 생성
+   - create database cloud_db default charset=utf8;
+   
+5. user1 생성
+   - create user 'user1'@'%' identified by 'qwer1234';
+   
+6. 제대로 생성되었는지 mysql, db 데이터베이스에서 확인
+
+7. user1 계정에 cloud_db에 대한 모든 권한 부여
+   - grant all privileges on cloud_db.* to 'user1'@'%' identified by 'qwer1234';
+   
+8. Master Host의 ssh-config에서 IdentityFile 경로명 확인
+   - vagrant ssh-config node01
+   
+9. Putty Gen에서 위의 단계에서 복사한 경로의 private_key를 로드하여 ppk파일로 저장
+
+10. Putty에서 아래 내용대로 설정
+    - hostname : localhost
+    - Auth : 위의 단계에서 생성한 ppk파일
+
+11. node01 호스트에 /etc/my.cnf 다음 내용 추가
+    - server-id=1 (master server 번호는 1)
+    - log_bin=mysql-bin (log파일을 mysql-bin으로 설정
+    
+12. node01 호스트에서 mysql 접속 후 다음 명령어를 실행하여 내용 복사
+    - show master status
+
+
+   
 ※ vagrant 제거 명령
    -vagrant destory
    -vagrant halt (vagrant 강제종료)
    -vagrant suspend (vagrant 중지)
    -vagrant resume (vagrant 재실행)
+   -vagrant status (vagrant 상태확인)
+   -vagrant ssh [hostname] (해당 호스트에 ssh로 접속)
