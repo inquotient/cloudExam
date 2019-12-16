@@ -24,8 +24,31 @@
    
 9. MySQL 저장소 설정
    - sudo yum -y intsall https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
+   
+10. MySQL 설치   
    - sudo yum -y install mysql-community-server
 
+11. MySQL 데몬 활성화
+   - systemctl enable mysqld
+   
+12. MySQL 데몬 실행
+   - systemctl start mysqld
+   
+13. MySQL Login password 확인
+   - cat /var/log/mysqld.log | grep password 실행시 해시값 복사
+   
+14. MySQL Login
+   - mysql -uroot -p
+   
+15. 유효한 패스워드 정책 확인
+   - show variables like 'validate_password%';
+
+16. 패스워드 정책 수준을 낮게 조정
+   - set global validate_password_policy=LOW;
+
+17. mysql의 root 계정의 비밀번호를 qwer1234로 변경
+   - alter user 'root'@'localhost' identified by 'qwer1234';
+   
 ※ vagrant 제거 명령
    -vagrant destory
    -vagrant halt (vagrant 강제종료)
