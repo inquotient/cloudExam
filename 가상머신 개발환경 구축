@@ -21,3 +21,6 @@
 
 ※ vagrant 제거 명령
    -vagrant destory
+   -vagrant halt (vagrant 강제종료)
+   -vagrant suspend (vagrant 중지)
+   -vagrant resume (vagrant 재실행)
