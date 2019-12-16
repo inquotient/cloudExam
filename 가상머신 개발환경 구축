@@ -19,6 +19,9 @@
    - vagrant plugin install  vagrant-vbguest
 7. vagrant up 명령 실행
 
+8. ==> node01: Rsyncing folder: /cygdrive/c/Users/HPE/ => /vagrant
+   interrupt 걸기
+
 ※ vagrant 제거 명령
    -vagrant destory
    -vagrant halt (vagrant 강제종료)
