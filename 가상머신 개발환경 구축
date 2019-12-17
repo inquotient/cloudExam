@@ -23,7 +23,7 @@
    interrupt 걸기
    
 9. MySQL 저장소 설정
-   - sudo yum -y intsall http://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
+   - sudo yum -y install http://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
    
 10. MySQL 설치   
    - sudo yum -y install mysql-community-server
