@@ -138,3 +138,12 @@ WINDOWS SLAVE DB
    -vagrant resume (vagrant 재실행)
    -vagrant status (vagrant 상태확인)
    -vagrant ssh [hostname] (해당 호스트에 ssh로 접속)
+   
+-----------------------------------------------------------------------------------------
+
+1. slave 에서 기존 cloud_db를 삭제
+   - drop database cloud_db
+   
+2. Master DB에서 지금까지의 데이터를 백업
+
+3. Master DB에서 백업한 데이터를 Slave DB에 복원
