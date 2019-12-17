@@ -145,8 +145,10 @@ WINDOWS SLAVE DB
    - drop database cloud_db
    
 2. Master DB에서 지금까지의 데이터를 백업
+   - mysqldump -uroot -p cloud_db > backup.sql;
 
 3. Master DB에서 백업한 데이터를 Slave DB에 복원
+   - mysql -uroot -p cloud_db < backup.sql;
 
 4. Master DB의 바이너리 로그 파일의 파일명과 Position
    - show master status;
