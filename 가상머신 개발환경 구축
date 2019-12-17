@@ -147,3 +147,12 @@ WINDOWS SLAVE DB
 2. Master DB에서 지금까지의 데이터를 백업
 
 3. Master DB에서 백업한 데이터를 Slave DB에 복원
+
+4. Master DB의 바이너리 로그 파일의 파일명과 Position
+   - show master status;
+   
+5. Slave DB에서
+   - Master DB의 복제 설정 (change to master ....)
+   - Slave DB 재시작
+   
+6. Master DB에서의 변경 내용을 Slave DB에서 확인가능 -> 성공
