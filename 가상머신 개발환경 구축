@@ -104,6 +104,7 @@ WINDOWS SLAVE DB
 11. node01 호스트에 /etc/my.cnf 다음 내용 추가
     - server-id=1 (master server 번호는 1)
     - log_bin=mysql-bin (log파일을 mysql-bin으로 설정
+    - bind-address=0.0.0.0
     
 12. node01 호스트에서 mysql 접속 후 다음 명령어를 실행하여 내용 복사
     - show master status
@@ -114,10 +115,11 @@ WINDOWS SLAVE DB
     - grant all privileges on cloud_db.* to 'user3'@'%' with grant option; (8.0버전)
     
 14. C:\ProgramData\MySQL\MySQL Server 8.0 경로에 존재하는 my.ini 설정파일 수정
-    ※ notepad++에서 수정할 것
+    ※ GIT VI 에디터로 수정할 것!!!
     - server-id=3
     - log_bin=log
     - replicate-do-db='cloud_db'
+    - bind-address=0.0.0.0
     
 15. 윈도우 mysql 콘솔에서 다음내용 입력
     change master to\
