@@ -82,13 +82,15 @@ WINDOWS SLAVE DB
 4. 생성한 두 호스트에 cloud_db 생성
    - create database cloud_db default charset=utf8;
    
-5. user1 생성
+5. user1, replicate_user(db 동기화를 위한 master 계정) 생성
    - create user 'user1'@'%' identified by 'qwer1234';
+   - create user 'replicate_user'@'%' identified by 'qwer1234';
    
 6. 제대로 생성되었는지 mysql, db 데이터베이스에서 확인
 
-7. user1 계정에 cloud_db에 대한 모든 권한 부여
+7. user1 계정에 cloud_db에 대한 모든 권한 부여 및 'replicate_user'에게 모든 DB에 대해 replication slave로 설정 
    - grant all privileges on cloud_db.* to 'user1'@'%' identified by 'qwer1234';
+   - grant replication slave on *.* to 'replicate_user'@'%';
    
 8. Master Host의 ssh-config에서 IdentityFile 경로명 확인
    - vagrant ssh-config node01
@@ -126,8 +128,8 @@ WINDOWS SLAVE DB
     master_log_file='mysql-bin.000002',\
     master_log_pos=154;
     
-16. 
-
+※ error connecting to master 오류 아래내용 참조
+   http://www.mysqlkorea.com/gnuboard4/bbs/board.php?bo_table=community_03&wr_id=2778
    
 ※ vagrant 제거 명령
    -vagrant destory
